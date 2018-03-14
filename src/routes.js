@@ -1,10 +1,8 @@
 import React from "react";
 import {
 	Route,
-	Link,
 	Redirect,
 	Switch,
-	browserHistory,
 } from "react-router-dom";
 
 import { LoginRoute } from "./routes/LoginRoute";
@@ -16,24 +14,34 @@ import Forgot from "./views/Login/Forgot";
 
 /* AdminRoute */
 import Home from "./views/Admin/Home";
+import Todo from "./views/Admin/Todo";
 import About from "./views/Admin/About";
-import About_Me from "./views/Admin/About/Me";
-
+import About_UserID from "./views/Admin/About/About_UserID";
 
 /*
 相關路由設置
  */
 export default (
 	<Switch>
-		<LoginRoute path="/" exact component={Login} />
-		<LoginRoute path="/login" component={Login} />
-		<LoginRoute path="/forgot" component={Forgot} />
+		{/* <LoginRoute path="/" exact strict component={Login} /> */}
+		<Route
+			exact
+			strict
+			path="/"
+			render={() =>
+			 <Redirect to="/admin" />
+			}
+		/>
+		<LoginRoute path="/login" exact strict component={Login} />
+		<LoginRoute path="/login/forgot" exact strict component={Forgot} />
 
-        <AdminRoute path="/admin" exact component={Home} />
+		<AdminRoute path="/admin" exact strict component={Home} />
 
-        <AdminRoute path="/about" exact component={About} />
-        <AdminRoute path="/about/:userid" component={About_Me} />
+		<AdminRoute path="/todo" exact strict component={Todo} />
 
-        <Route render={() => <h3>No Match Route</h3>} />
+		<AdminRoute path="/about" exact strict component={About} />
+		<AdminRoute path="/about/:userid" exact strict component={About_UserID} />
+
+		<Route render={() => <h3>No Match Route</h3>} />
 	</Switch>
 );

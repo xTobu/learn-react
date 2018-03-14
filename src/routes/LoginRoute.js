@@ -1,11 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import {
 	Route,
-	BrowserRouter,
-	Link,
-	Redirect,
-	Switch,
-	browserHistory,
 } from "react-router-dom";
 
 export function LoginRoute({ component: Component, ...rest }) {
