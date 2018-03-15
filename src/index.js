@@ -6,7 +6,9 @@ import { BrowserRouter } from "react-router-dom";
 
 import { Provider } from "react-redux";
 
-import configureStore from './redux/store';
+// import configureStore from './redux/store';
+import store from './redux/store';
+
 //加入 normalize.css
 //https://stackoverflow.com/questions/42119878/how-to-use-normalize-css-using-npm-install-with-webpack
 import "normalize.css";
@@ -20,26 +22,9 @@ import registerServiceWorker from "./registerServiceWorker";
 
 import routes from "./routes";
 
-// @Store
-//
-// store = createStore(reducer)
-// 使用redux dev tools
-// 如果要正常使用是使用 
-//const store = createStore(itemApp)
-// const store = createStore(
-// 	itemApp,
-// 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// );
-const store = configureStore();
 
-// Views
-// const renderApp = appRoutes => {
-// 	ReactDOM.render(
-// 		<BrowserRouter>{appRoutes}</BrowserRouter>,
-// 		document.getElementById("root")
-// 	);
-// };
-// renderApp(routes);
+// const store = configureStore;
+
 
 // Views
 ReactDOM.render(

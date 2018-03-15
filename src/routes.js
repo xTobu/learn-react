@@ -13,7 +13,7 @@ import Login from "./views/Login/Login";
 import Forgot from "./views/Login/Forgot";
 
 /* AdminRoute */
-import Home from "./views/Admin/Home";
+import Admin from "./views/Admin/Admin";
 import Todo from "./views/Admin/Todo";
 import About from "./views/Admin/About";
 import About_UserID from "./views/Admin/About/About_UserID";
@@ -35,7 +35,7 @@ export default (
 		<LoginRoute path="/login" exact strict component={Login} />
 		<LoginRoute path="/login/forgot" exact strict component={Forgot} />
 
-		<AdminRoute path="/admin" exact strict component={Home} />
+		<AdminRoute path="/admin" exact strict component={Admin} />
 
 		<AdminRoute path="/todo" exact strict component={Todo} />
 
