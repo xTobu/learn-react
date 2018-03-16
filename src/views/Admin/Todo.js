@@ -24,10 +24,17 @@ class Todo extends Component {
 		// store中的狀態值發送要新增的action，onItemAdd方法會被綁到props裡面
 		console.log(this.props);
 		if (!this.state.inputValue) return;
-
+		
 		this.props.onItemAdd({
 			id: +new Date(),
 			text: this.state.inputValue,
+		});
+
+		this.props.Message_DataAdd({
+			id:1,
+			Name: 2,
+			Tag: 3,
+			Text: 4,
 		});
 
 		//// store.dispatch(action)
@@ -78,5 +85,8 @@ class Todo extends Component {
 }
 
 // 將store中的items值傳綁到props上
-const mapStateToProps = store => ({ items: store.items });
+const mapStateToProps = store => ({
+	items: store.items,
+	Messages: store.Message,
+});
 export default connect(mapStateToProps, actionCreators)(Todo);

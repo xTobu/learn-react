@@ -1,5 +1,6 @@
 import React from "react";
-import Header from "../components/Header";
+// import Header from "../components/ContainerUI/Header";
+import { Header, SideBar } from "../components/ContainerUI";
 import { Route, Link } from "react-router-dom";
 
 export function AdminRoute({ component: Component, ...rest }) {
@@ -18,6 +19,9 @@ export function AdminRoute({ component: Component, ...rest }) {
 								<Link to="/todo">/todo</Link>
 							</li>
 							<li>
+								<Link to="/message">/message</Link>
+							</li>
+							<li>
 								<Link to="/about">/about</Link>
 							</li>
 							<li>
@@ -30,6 +34,7 @@ export function AdminRoute({ component: Component, ...rest }) {
 
 						<Component {...props} />
 					</main>
+					<SideBar />
 				</div>
 			)}
 		/>

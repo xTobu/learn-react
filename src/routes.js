@@ -15,6 +15,7 @@ import Forgot from "./views/Login/Forgot";
 /* AdminRoute */
 import Admin from "./views/Admin/Admin";
 import Todo from "./views/Admin/Todo";
+import Message from "./views/Admin/Message";
 import About from "./views/Admin/About";
 import About_UserID from "./views/Admin/About/About_UserID";
 
@@ -38,6 +39,8 @@ export default (
 		<AdminRoute path="/admin" exact strict component={Admin} />
 
 		<AdminRoute path="/todo" exact strict component={Todo} />
+
+		<AdminRoute path="/message" exact strict component={Message} />	
 
 		<AdminRoute path="/about" exact strict component={About} />
 		<AdminRoute path="/about/:userid" exact strict component={About_UserID} />

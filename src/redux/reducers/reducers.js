@@ -7,11 +7,14 @@
 // 使用純粹函式的陣列unshift，不能有副作用
 // state(狀態)一開始的值是空陣列`state=[]`
 import { combineReducers } from "redux";
-import { items, lists } from "./reducerTodo";
 
-const itemApp = combineReducers({
+import { items } from "./reducerTodo";
+import { Message } from "./reducerMessage";
+
+
+const Reducers = combineReducers({
 	items,
-	lists,
+	Message
 });
 
-export default itemApp;
+export default Reducers;
