@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Card } from "antd";
-
+import styled from "styled-components";
+const FormTitle = styled.h3`
+	color: palevioletred;
+`;
 class MessageList extends Component {
 	handleDelete = id => {
 		this.props.actionDataDelete(id);
@@ -10,10 +13,15 @@ class MessageList extends Component {
 		const { Messages } = this.props;
 		return (
 			<div className="MessageList">
-				<h3>MessageList</h3>
+				<FormTitle>MessageList</FormTitle>
 
 				{Messages.datas.map((item, index) => (
-					<div key={item.id}>
+					<div
+						key={item.id}
+						style={{
+							margin: "10px",
+						}}
+					>
 						<Card
 							key={item.id}
 							title={item.id}

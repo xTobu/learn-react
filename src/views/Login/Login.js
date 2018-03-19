@@ -13,7 +13,7 @@ class Login extends Component {
 		this.props.form.validateFields((err, values) => {
 			if (!err) {
 				console.log("Received values of form: ", values);
-				this.props.history.push('/message')
+				this.props.history.push('/message')			
 			} else {
 				message.error("還有欄位沒填", 1);
 				
